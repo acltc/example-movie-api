@@ -12,4 +12,9 @@ class ActorsController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @actor = Actor.find_by(id: params[:id])
+    render :show
+  end
 end
