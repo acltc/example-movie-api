@@ -32,4 +32,11 @@ class ActorsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal "Updated name", data["first_name"]
   end
+
+  test "destroy" do
+    assert_difference "Actor.count", -1 do
+      delete "/actors/#{Actor.first.id}.json"
+      assert_response 200
+    end
+  end
 end

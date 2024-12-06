@@ -27,4 +27,10 @@ class ActorsController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @actor = Actor.find_by(id: params[:id])
+    @actor.destroy
+    render json: { message: "Actor successfully destroyed!" }
+  end
 end
