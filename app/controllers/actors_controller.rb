@@ -9,6 +9,7 @@ class ActorsController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       known_for: params[:known_for],
+      movie_id: params[:movie_id],
     )
     render :show
   end
